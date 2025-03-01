@@ -216,45 +216,5 @@
       </div>
     </div>
 
-  </div>
-  <button class="join-button" onclick="openModal()">انضم لفريقنا</button>
-  <div id="joinModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">✖</span>
-      <h2>طلب الانضمام</h2>
-      <input type="text" id="name" placeholder="اسمك">
-      <input type="text" id="skills" placeholder="مهاراتك">
-      <input type="text" id="project" placeholder="اسم مشروع سابق">
-      <input type="text" id="contact" placeholder="وسيلة التواصل (بريد/هاتف)">
-      <button onclick="sendRequest()">إرسال الطلب</button>
-    </div>
-  </div>
-  <script>
-    function openModal() {
-      document.getElementById("joinModal").style.display = "flex";
-    }
-    function closeModal() {
-      document.getElementById("joinModal").style.display = "none";
-    }
-    function sendRequest() {
-      let name = document.getElementById("name").value;
-      let skills = document.getElementById("skills").value;
-      let project = document.getElementById("project").value;
-      let contact = document.getElementById("contact").value;
-      if (name && skills && project && contact) {
-        let botToken = "7767663744:AAGYWE07FTXmx6tBcTe80JnX5KMdb35iyoc";
-        let chatId = "";
-        let message = `📝 طلب انضمام:%0A👤 الاسم: ${name}%0A🎯 المهارات: ${skills}%0A📂 المشروع السابق: ${project}%0A📞 تواصل: ${contact}`;
-        fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`)
-          .then(response => {
-            alert("تم إرسال طلبك بنجاح!");
-            closeModal();
-          })
-          .catch(error => alert("حدث خطأ أثناء الإرسال"));
-      } else {
-        alert("يرجى ملء جميع الحقول.");
-      }
-    }
-  </script>
 </body>
 </html>
