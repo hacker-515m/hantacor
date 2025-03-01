@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فريقنا الاحترافي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* إعادة تعيين الأساسيات */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #00aaff;
+    }
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 170, 255, 0.4);
+    }
+    .card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #00aaff;
+      margin-bottom: 15px;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.3s ease;
+    }
+    .card:hover img {
+      transform: scale(1.1);
+    }
+    .card h2 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card p {
+      font-size: 1em;
+      margin-bottom: 8px;
+      color: #ccc;
+    }
+    .card strong {
+      color: #00aaff;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+    .buttons a {
+      text-decoration: none;
+      background: #00aaff;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .buttons a:hover {
+      background: #0077cc;
+      transform: scale(1.1);
+    }
+    .join-button {
+      margin-top: 30px;
+      background: #00ff7f;
+      padding: 12px 20px;
+      border: none;
+      color: #121212;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .join-button:hover {
+      background: #00cc66;
+      transform: scale(1.1);
+    }
+    /* نافذة الإدخال (Modal) */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .modal-content {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: right;
+      width: 350px;
+      position: relative;
+      animation: slideIn 0.5s ease forwards;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .modal-content h2 {
+      margin-bottom: 15px;
+      color: #00ff7f;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #333;
+      color: #fff;
+    }
+    .modal-content button {
+      background: #00aaff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      transition: background 0.3s;
+      width: 100%;
+    }
+    .modal-content button:hover {
+      background: #0077cc;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      color: #fff;
+    }
+    @media (max-width: 768px) {
+      .team-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>فريقنا الاحترافي</h1>
+  <div class="team-container">
+    <div class="card">
+        <img src="../img/ana.jpg" alt="بهاء المغربي">
+        <h2>بهاء المغربي</h2>
+        <p><strong>الخبرة:</strong>  خبير في اختراق الأنظمة والمواقع و السرفرات صانع ادوات اختراق خبرة 7 سنوات</p>
+        <p><strong>اللغات:</strong> Python, C++, C#, PHP, SQL, Bash, HTML, CSS, JAVAScript, </p>
+        <p><strong>البلد:</strong> صعيد مصر سوهاج</p>
+      <div class="buttons">
+        <a href="https://www.facebook.com/share/1AN5AmVFkP/">📘 فيسبوك</a>
+        <a href="https://wa.me/201064004818?text=">📞 واتساب</a>
+        <a href="@BytePhantom_1">📷 تيلجرام</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="../img/4.jpg" alt="أحمد أبو تمام">
+      <h2>أحمد أبو تمام</h2>
+      <p><strong>الخبرة:</strong> خبير في الاختراق والتداول</p>
+      <p><strong>اللغات:</strong> C++, Java, python</p>
+      <p><strong>البلد:</strong> سويا الحرة</p>
+      <div class="buttons">
+        <a href="#">📘 فيسبوك</a>
+        <a href="#">📞 واتساب</a>
+        <a href="#">📷 إنستجرام</a>
+      </div>
+    </div>
+
+  </div>
+  <button class="join-button" onclick="openModal()">انضم لفريقنا</button>
+  <div id="joinModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">✖</span>
+      <h2>طلب الانضمام</h2>
+      <input type="text" id="name" placeholder="اسمك">
+      <input type="text" id="skills" placeholder="مهاراتك">
+      <input type="text" id="project" placeholder="اسم مشروع سابق">
+      <input type="text" id="contact" placeholder="وسيلة التواصل (بريد/هاتف)">
+      <button onclick="sendRequest()">إرسال الطلب</button>
+    </div>
+  </div>
+  <script>
+    function openModal() {
+      document.getElementById("joinModal").style.display = "flex";
+    }
+    function closeModal() {
+      document.getElementById("joinModal").style.display = "none";
+    }
+    function sendRequest() {
+      let name = document.getElementById("name").value;
+      let skills = document.getElementById("skills").value;
+      let project = document.getElementById("project").value;
+      let contact = document.getElementById("contact").value;
+      if (name && skills && project && contact) {
+        let botToken = "7767663744:AAGYWE07FTXmx6tBcTe80JnX5KMdb35iyoc";
+        let chatId = "";
+        let message = `📝 طلب انضمام:%0A👤 الاسم: ${name}%0A🎯 المهارات: ${skills}%0A📂 المشروع السابق: ${project}%0A📞 تواصل: ${contact}`;
+        fetch(`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`)
+          .then(response => {
+            alert("تم إرسال طلبك بنجاح!");
+            closeModal();
+          })
+          .catch(error => alert("حدث خطأ أثناء الإرسال"));
+      } else {
+        alert("يرجى ملء جميع الحقول.");
+      }
+    }
+  </script>
+</body>
+</html>

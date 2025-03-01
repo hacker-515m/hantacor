@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا - الجنتكور الأسود</title>
+  <style>
+    /* إعادة تعيين الأنماط الافتراضية */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      direction: rtl;
+      text-align: center;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .contact-info, .groups-links, .app-section {
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .contact-item {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .contact-item:hover {
+      transform: translateY(-5px);
+    }
+    .contact-item a {
+      text-decoration: none;
+      color: #fff;
+    }
+    .icon {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 8px;
+    }
+    .icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .groups-links h2,
+    .app-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    .groups-links ul {
+      list-style: none;
+    }
+    .groups-links li {
+      margin: 10px 0;
+    }
+    .groups-links a {
+      text-decoration: none;
+      color: #00c6ff;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    .groups-links a:hover {
+      color: #0077b3;
+    }
+    .app-section p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    .btn-app {
+      display: inline-block;
+      background: linear-gradient(135deg, #00c6ff, #0077b3);
+      padding: 12px 25px;
+      border-radius: 50px;
+      color: #fff;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    }
+    .btn-app:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(135deg, #0077b3, #005a8f);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* تأخير بسيط لكل قسم */
+    .contact-info { animation-delay: 0.3s; }
+    .groups-links { animation-delay: 0.6s; }
+    .app-section { animation-delay: 0.9s; }
+    /* تجاوب الشاشات */
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      .contact-info { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>تواصل معنا</h1>
+      <p>للانضمام إلى مجموعاتنا، متابعة قناتنا أو التواصل معنا عبر الوسائل التالية:</p>
+    </header>
+    
+    <!-- معلومات التواصل -->
+    <section class="contact-info">
+      <!-- تليجرام -->
+      <div class="contact-item">
+        <a href="https://t.me/Hantacor" target="_blank">
+          <div class="icon">
+            <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="120" cy="120" r="120" fill="#37aee2"/>
+              <path d="M100.5,152.2l-3.5,32.2c5.3,0,7.6-2.3,10.4-5.1l25.1-23.9l52.1,38.2c9.6,5.3,16.3,2.5,18.7-8.3l34-160.5
+              c2.9-13.3-4.8-19.7-13.7-15.6L25.1,105.4c-11.7,4.5-11.6,10.6,2.4,13.4L94.1,124L100.5,152.2z" fill="#fff"/>
+            </svg>
+          </div>
+          <span>تليجرام</span>
+        </a>
+      </div>
+      <!-- فيسبوك -->
+      <div class="contact-item">
+        <a href="https://www.facebook.com/share/165ymMEY2c/" target="_blank">
+          <div class="icon">
+            <svg viewBox="0 0 216 216" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#1877f2" d="M204.1 0H11.9C5.3 0 0 5.3 0 11.9v192.3c0 6.6 5.3 11.9 11.9 11.9H116v-83.7H85.5v-32.7H116V63.1c0-30.4 18.6-46.9 45.7-46.9
+              c13 0 24.1 1 27.3 1.4v31.7h-18.8c-14.8 0-17.7 7-17.7 17.3v22.7h35.4l-4.6 32.7H159.5V216h44.6c6.6 0 11.9-5.3 11.9-11.9V11.9
+              C216 5.3 210.7 0 204.1 0z"/>
+            </svg>
+          </div>
+          <span>فيسبوك</span>
+        </a>
+      </div>
+      <!-- واتساب -->
+      <div class="contact-item">
+        <a href="https://wa.me/201551517479?text=" target="_blank">
+          <div class="icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#25D366" d="M20.52 3.48A11.91 11.91 0 0012 0C5.37 0 0 5.37 0 12c0 2.12.56 4.19 1.62 6.03L0 24l5.97-1.57A11.87 11.87 0 0012 24
+              c6.63 0 12-5.37 12-12a11.91 11.91 0 00-3.48-8.52zM12 21.5a9.41 9.41 0 01-5.03-1.38l-.36-.22L4 20l.64-2.63-.23-.38A9.5 9.5 0 012.5 12
+              C2.5 6.7 6.7 2.5 12 2.5S21.5 6.7 21.5 12 17.3 21.5 12 21.5zm5.06-7.11c-.28-.14-1.67-.82-1.93-.91s-.45-.14-.64.14
+              c-.2.28-.77.91-.94 1.1-.18.18-.36.2-.64.07a8.07 8.07 0 01-2.38-1.47 9.05 9.05 0 01-1.68-2.1c-.18-.28 0-.42.13-.56
+              .13-.13.28-.36.42-.54.14-.18.18-.28.28-.46.09-.18.05-.36-.03-.5-.07-.14-.64-1.54-.88-2.11-.23-.56-.46-.48-.64-.48h-.55
+              c-.18 0-.46.07-.7.36s-.9.88-.9 2.14c0 1.27.92 2.5 1.05 2.68.13.18 1.85 2.83 4.49 3.96.63.28 1.12.45 1.5.57.63.21 1.2.18
+              1.65.11.5-.07 1.67-.68 1.9-1.33.23-.65.23-1.21.16-1.33z"/>
+            </svg>
+          </div>
+          <span>واتساب</span>
+        </a>
+      </div>
+    </section>
+    
+    <!-- روابط المجموعات والقناة -->
+    <section class="groups-links">
+      <h2>مجموعاتنا وقناتنا</h2>
+      <ul>
+        <li><a href="https://chat.whatsapp.com/JQNCq8YfiJNBSP3zvlOcM4" target="_blank">مجموعة الواتساب</a></li>
+        <li><a href="https://t.me/hantacor_1" target="_blank">مجموعة التليجرام</a></li>
+        <li><a href="https://t.me/bahaa_010640" target="_blank">قناة التليجرام</a></li>
+        <li><a href="https://youtube.com/@bahaa.0bb?si=j4_EAlV7YNxF5obs" target="_blank">قناتنا على اليوتيوب</a></li>
+      </ul>
+    </section>
+    
+
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const animatedSections = document.querySelectorAll('.contact-info, .groups-links, .app-section');
+      animatedSections.forEach((section, idx) => {
+        section.style.animationDelay = (0.3 * (idx+1)) + "s";
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Termux Fedora Pro - صلاحيات متقدمة</title>
+  <!-- استيراد خط Space Grotesk من جوجل -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00ff88;
+      --secondary: #7d12ff;
+      --terminal-bg: rgba(0, 0, 0, 0.9);
+      --glow: rgba(0, 255, 136, 0.3);
+    }
+    /* خلفية مبسطة وخفيفة */
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a1929, #0f3460);
+      font-family: 'Space Grotesk', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    /* الحاوية الرئيسية */
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 20px;
+      box-shadow: 0 0 20px var(--glow);
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: translateY(-3px);
+    }
+    /* العنوان */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    /* منطقة الطرفية */
+    main {
+      padding: 0 1rem;
+    }
+    .terminal {
+      background: var(--terminal-bg);
+      border-radius: 15px;
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 1.5rem;
+    }
+    /* تنسيق سطور الكود */
+    .code-line {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      padding: 0.75rem;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    .code-line:hover {
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(5px);
+    }
+    .line-number {
+      width: 40px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    .command {
+      flex-grow: 1;
+      padding-left: 1rem;
+    }
+    .command::after {
+      content: '>';
+      margin-left: 0.5rem;
+      color: var(--primary);
+    }
+    /* زر النسخ مع تأثير خفيف عند النقر */
+    .copy-btn {
+      background: var(--secondary);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+      margin-left: 1rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .copy-btn:hover {
+      background: var(--primary);
+    }
+    .copy-btn:active {
+      transform: scale(0.95);
+    }
+    /* تذييل الصفحة */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+      header h1 {
+        font-size: 2.5rem;
+      }
+      .code-line {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <h1>Report</h1>
+      <p>اومࢪ عمل هجوم ع حساب فيس و اغلاقه عن طࢪيق عمل الكثيࢪ من الابلاغات</p>
+    </header>
+    <main>
+      <section class="terminal" aria-label="شاشة الأوامر">
+        <div class="code-line">
+          <span class="line-number">#1</span>
+          <span class="command">apt update</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#2</span>
+          <span class="command">apt upgrade</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#3</span>
+          <span class="command">pkg install git</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#4</span>
+          <span class="command">pkg install python2</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#1</span>
+          <span class="command">apt update</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#2</span>
+          <span class="command">apt upgrade</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#3</span>
+          <span class="command">pkg install git</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#4</span>
+          <span class="command">pkg install python2</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#5</span>
+          <span class="command">git clone https://github.com/IlayTamvan/Report</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#6</span>
+          <span class="command">cd Report</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#7</span>
+          <span class="command">ls</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#8</span>
+          <span class="command">unzip Report.zip</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#9</span>
+          <span class="command">ls</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#10</span>
+          <span class="command">chmod +x Report.py</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+        <div class="code-line">
+          <span class="line-number">#11</span>
+          <span class="command">python2 Report.py</span>
+          <button class="copy-btn" onclick="copyCommand(this)">نسخ</button>
+        </div>
+  <script>
+    function copyCommand(btn) {
+      const commandText = btn.parentElement.querySelector('.command').innerText;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(commandText).catch(() => fallbackCopyTextToClipboard(commandText));
+      } else {
+        fallbackCopyTextToClipboard(commandText);
+      }
+    }
+    function fallbackCopyTextToClipboard(text) {
+      const textArea = document.createElement("textarea");
+      textArea.value = text;
+      textArea.style.position = "fixed";
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Error copying text: ', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  </script>
+</body>
+</html>
